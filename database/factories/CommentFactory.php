@@ -7,6 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Comment::class, function (Faker $faker) {
     return [
-        'text' => $faker->paragraph(4, true),
+        'text' => $faker->text(50),
     ];
 });
