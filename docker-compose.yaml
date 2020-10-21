@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/php/Dockerfile
+    container_name: app_aula15
+    volumes:
+      - ./:/var/www
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    container_name: db_aula15
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: treinamentobasis
+      MYSQL_USER: treinamentobasis
+      MYSQL_DATABASE: aulateste
+    ports:
+      - 3306:3306
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx_aula15
+    volumes:
+      - ./docker/nginx:/etc/nginx/conf.d
+      - ./:/var/www
+    depends_on:
+      - app
+    ports:
+      - 80:80
+
+  sonarqube:
+    image: sonarqube:7.9.4-community
+    container_name: sonarqube_aula15
+    ports:
+      - 9000:9000

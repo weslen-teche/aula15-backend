@@ -1,0 +1,11 @@
+sonar.projectKey=
+sonar.projectName=
+sonar.projectVersion=1.0.0
+sonar.host.url=
+sonar.sources=app
+sonar.language=php
+sonar.sourceEncoding=UTF-8
+sonar.login=
+sonar.php.coverage.reportPaths=storage/build/coverage.xml
+sonar.php.tests.reportPath=storage/build/phpunit-report.xml
+# sonar.exclusions=app/Providers/**,app/Exceptions/Handler.php,app/Console/Kernel.php
