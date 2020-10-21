@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\PostStoreRequest;
 use App\Http\Resources\PostResource;
 use App\Models\Post;
+use Illuminate\Http\Response;
 
 class PostAPIController extends Controller
 {
@@ -20,7 +21,7 @@ class PostAPIController extends Controller
     {
         $post = Post::create($request->all());
 
-        return response()->json(new PostResource($post));
+        return response()->json(new PostResource($post), Response::HTTP_CREATED);
     }
 
     public function show($id)

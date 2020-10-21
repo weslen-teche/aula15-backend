@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CommentStoreRequest;
 use App\Http\Resources\CommentResource;
 use App\Models\Post;
+use Illuminate\Http\Response;
 
 class CommentAPIController extends Controller
 {
@@ -21,6 +22,6 @@ class CommentAPIController extends Controller
         $post = Post::findOrFail($id);
         $comment = $post->comments()->create($request->all());
 
-        return response()->json(new CommentResource($comment));
+        return response()->json(new CommentResource($comment), Response::HTTP_CREATED);
     }
 }
