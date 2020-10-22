@@ -38,3 +38,11 @@ services:
     container_name: sonarqube_aula15
     ports:
       - 9000:9000
+
+  selenium:
+    image: selenium/standalone-chrome:3.11.0-antimony
+    container_name: selenium_aula15
+    depends_on:
+      - app
+    volumes:
+      - ./:/dev/app
