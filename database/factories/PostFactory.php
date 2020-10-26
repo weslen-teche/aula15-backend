@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Post::class, function (Faker $faker) {
     return [
-        'title' => $faker->sentence(4),
+        'title' => $faker->text(20),
         'description' => $faker->text(50),
     ];
 });
