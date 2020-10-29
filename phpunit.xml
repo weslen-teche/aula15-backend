@@ -28,4 +28,8 @@
         <server name="SESSION_DRIVER" value="array"/>
         <server name="TELESCOPE_ENABLED" value="false"/>
     </php>
+    <logging>
+        <log type="coverage-clover" target="storage/coverage/clover-coverage.xml"/>
+        <log type="junit" target="storage/coverage/junit-report.xml"/>
+    </logging>
 </phpunit>
