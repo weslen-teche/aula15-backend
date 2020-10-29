@@ -5,8 +5,6 @@ WORKDIR /var/www
 
 # Install dependencies
 RUN apk update && apk add --no-cache \
-    nodejs \
-    npm \
     libzip-dev \
     zip \
     openjdk11-jre \
@@ -33,9 +31,6 @@ RUN wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-s
 # Install composer
 RUN curl --insecure https://getcomposer.org/composer.phar -o /usr/bin/composer && chmod +x /usr/bin/composer
 RUN composer self-update
-
-# Install Global Hirak/Prestissimo Plugin
-RUN composer global require hirak/prestissimo
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
