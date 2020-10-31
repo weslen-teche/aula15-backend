@@ -13,7 +13,7 @@ class PostSeed extends Seeder
      */
     public function run()
     {
-        factory(Post::class, 10)->create()->each(function ($post) {
+        factory(Post::class, 16)->create()->each(function ($post) {
             $post->comments()->saveMany(factory(Comment::class, rand(1, 3))->make());
         });
     }

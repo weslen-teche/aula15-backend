@@ -17,8 +17,9 @@ class PostResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
+            'slug' => $this->slug,
             'description' => $this->description,
-            'commentsCount' => $this->comments->count()
+            'comments_count' => $this->comments->count(),
         ];
     }
 }

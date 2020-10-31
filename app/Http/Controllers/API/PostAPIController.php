@@ -24,9 +24,9 @@ class PostAPIController extends Controller
         return response()->json(new PostResource($post), Response::HTTP_CREATED);
     }
 
-    public function show($id)
+    public function show($slug)
     {
-        $post = Post::findOrFail($id);
+        $post = Post::where('slug', $slug)->firstOrFail();
 
         return response()->json(new PostResource($post));
     }
