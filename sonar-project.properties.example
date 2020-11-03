@@ -1,11 +1,11 @@
-sonar.projectKey=
-sonar.projectName=
+sonar.projectKey=aulateste
+sonar.projectName=Aula Teste API
 sonar.projectVersion=1.0.0
-sonar.host.url=
+sonar.host.url=http://sonarqube:9000
 sonar.sources=app
 sonar.language=php
 sonar.sourceEncoding=UTF-8
-sonar.login=
+sonar.login=KEY
 sonar.php.coverage.reportPaths=storage/coverage/clover-coverage.xml
 sonar.php.tests.reportPath=storage/coverage/junit-report.xml
-# sonar.exclusions=app/Providers/**,app/Exceptions/Handler.php,app/Console/Kernel.php
+#sonar.exclusions=app/Providers/**,app/Exceptions/Handler.php,app/Console/Kernel.php
