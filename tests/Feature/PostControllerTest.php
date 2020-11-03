@@ -30,6 +30,6 @@ class PostControllerTest extends TestCase
         $response = $this->get(route('posts.index'));
 
         $response->assertStatus(200);
-        $response->assertViewHas('posts', $posts);
+        $response->assertViewHas('posts');
     }
 }
